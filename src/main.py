@@ -1,6 +1,7 @@
 import json, os
 from datetime import datetime
 
+
 #Adds a new taks
 def add_task():
     description = input("Enter task name: ")
@@ -33,7 +34,6 @@ def add_task():
     print(f"Task added successfully (ID: {new_task["id"]})")
 
 
-
 #Updates selected task
 def update_task():
     pass
@@ -53,14 +53,23 @@ def delete_task():
         return
     
     #Removes requested task from list
-    deleted_task = input("What ")
-    task_list.remove()
+    deleted_task = input("Enter name or ID of task you wish to delete: ").lower()
+    found = False
+    for i in task_list:
+        if i["description"].lower() == deleted_task or str(i["id"]) == deleted_task:
+            task_list.remove(i)
+            found = True
+
+    if not found:
+        print("No task with corresponding name or ID")
+        return
     
     #Updates JSON with new list
     with open("tasks.json", "w") as f:
         json.dump(task_list, f, indent=4)
 
     print("Task deleted successfully")
+
 
 def list_task():
     #Looks for existing JSON and loads task list. If none available ends function.
@@ -79,5 +88,3 @@ def list_task():
     for i in task_list:
         print(f"{num}. {i["description"]}")
         num+=1
-
-list_task()
