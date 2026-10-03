@@ -52,6 +52,7 @@ def update_task():
     for i in task_list:
         if i["description"].lower() == updated_task or str(i["id"]) == updated_task:
             i["description"] = input("Enter new name for task: ")
+            i["updatedAt"] = datetime.now().isoformat()
             found = True
 
     if not found:
@@ -116,6 +117,7 @@ def mark_in_progress():
     for i in task_list:
         if i["description"].lower() == updated_task or str(i["id"]) == updated_task:
             i["status"] = "in-progress"
+            i["updatedAt"] = datetime.now().isoformat()
             found = True
 
     if not found:
@@ -148,6 +150,7 @@ def mark_done():
     for i in task_list:
         if i["description"].lower() == updated_task or str(i["id"]) == updated_task:
             i["status"] = "done"
+            i["updatedAt"] = datetime.now().isoformat()
             found = True
 
     if not found:
@@ -254,4 +257,7 @@ def list_done():
     if not found:
         print("No tasks done")
 
-list_done()
+add_task()
+update_task()
+mark_done()
+list_task()
