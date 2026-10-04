@@ -257,7 +257,48 @@ def list_done():
     if not found:
         print("No tasks done")
 
-add_task()
-update_task()
-mark_done()
-list_task()
+
+def exit_program():
+    print("Exiting...")
+    exit() 
+
+
+menu_options = {
+    "1": add_task,
+    "2": update_task,
+    "3": delete_task,
+    "4": mark_in_progress,
+    "5": mark_done,
+    "6": list_task,
+    "7": list_todo,
+    "8": list_in_progress,
+    "9": list_done,
+    "10": exit_program
+}
+
+
+def main_menu():
+    while True:
+        print("\n--- Main Menu ---")
+        print("1. Add task")
+        print("2. Update task")
+        print("3. Delete Task")
+        print("4. Mark task in progress")
+        print("5. Mark task done")
+        print("6. List all tasks")
+        print("7. Lisk all to do tasks")
+        print("8. List all in progress tasks ")
+        print("9. List all done tasks")
+        print("10. Exit")
+        
+        choice = input("Select an option (1-10): ")
+
+        action = menu_options.get(choice)
+        
+        if action:
+            action()  # This executes the selected function!
+        else:
+            print("Invalid choice. Please try again.")
+
+
+main_menu()
