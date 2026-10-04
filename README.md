@@ -8,7 +8,8 @@ REQUIREMENTS
 HOW TO RUN
 Clone the repository and run the following command:
 1. Clone the repository and run the following command:
-```git clone https://github.com/Fried-Duck/Task-Tracker.git
+```bash
+git clone https://github.com/Fried-Duck/Task-Tracker.git
 cd Task-Tracker
 ```
 2. Run: python3 main.py
