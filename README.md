@@ -6,9 +6,12 @@ REQUIREMENTS
 - No additional packages required
 
 HOW TO RUN
-1. Save the program as task_manager.py.
-2. Open a terminal in the folder where you saved it.
-3. Run: python3 main.py
+Clone the repository and run the following command:
+1. Clone the repository and run the following command:
+```git clone https://github.com/Fried-Duck/Task-Tracker.git
+cd Task-Tracker
+```
+2. Run: python3 main.py
 
 MENU OPTIONS
 1. Add a task
