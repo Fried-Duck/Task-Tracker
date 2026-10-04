@@ -6,7 +6,6 @@ REQUIREMENTS
 - No additional packages required
 
 HOW TO RUN
-Clone the repository and run the following command:
 1. Clone the repository and run the following command:
 ```bash
 git clone https://github.com/Fried-Duck/Task-Tracker.git
